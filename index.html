@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Support Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>IT Support Booking</h1>
+            <p>Book your IT support session with our expert team</p>
+        </header>
+
+        <main>
+            <form id="booking-form" class="booking-form">
+                <section class="contact-section">
+                    <h2>Contact Information</h2>
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company/Organization</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                </section>
+
+                <section class="issue-section">
+                    <h2>Issue Description</h2>
+                    <div class="form-group">
+                        <label for="issue-type">Issue Type *</label>
+                        <select id="issue-type" name="issue-type" required>
+                            <option value="">Select an issue type</option>
+                            <option value="hardware">Hardware Issues</option>
+                            <option value="software">Software Problems</option>
+                            <option value="network">Network Connectivity</option>
+                            <option value="security">Security Concerns</option>
+                            <option value="data-recovery">Data Recovery</option>
+                            <option value="setup">System Setup/Installation</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Issue Description *</label>
+                        <textarea id="description" name="description" rows="4" placeholder="Please describe your IT issue in detail..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="urgency">Urgency Level *</label>
+                        <select id="urgency" name="urgency" required>
+                            <option value="">Select urgency level</option>
+                            <option value="low">Low - Not urgent</option>
+                            <option value="medium">Medium - Important but not critical</option>
+                            <option value="high">High - Urgent, affecting work</option>
+                            <option value="critical">Critical - System down, immediate attention needed</option>
+                        </select>
+                    </div>
+                </section>
+
+                <section class="calendar-section">
+                    <h2>Preferred Time Slot</h2>
+                    <div class="calendar-container">
+                        <div class="calendar-header">
+                            <button type="button" id="prev-month" class="nav-btn">&lt;</button>
+                            <h3 id="current-month"></h3>
+                            <button type="button" id="next-month" class="nav-btn">&gt;</button>
+                        </div>
+                        <div id="calendar" class="calendar-grid"></div>
+                    </div>
+                    
+                    <div class="time-slots" id="time-slots" style="display: none;">
+                        <h3>Available Time Slots</h3>
+                        <div class="slots-grid" id="slots-grid"></div>
+                    </div>
+                    
+                    <input type="hidden" id="selected-datetime" name="selected-datetime">
+                </section>
+
+                <section class="consent-section">
+                    <h2>GDPR Consent & Terms</h2>
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="data-processing" name="data-processing" required>
+                            <span class="checkmark"></span>
+                            I consent to the processing of my personal data for the purpose of providing IT support services. Your data will be stored securely and used only for scheduling and delivering support services. *
+                        </label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="data-storage" name="data-storage" required>
+                            <span class="checkmark"></span>
+                            I understand that my data will be retained for up to 12 months for service quality and follow-up purposes, after which it will be securely deleted unless required by law. *
+                        </label>
+                    </div>
+                    
+                    <div class="checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="marketing-consent" name="marketing-consent">
+                            <span class="checkmark"></span>
+                            I would like to receive updates about IT services and tips via email (optional).
+                        </label>
+                    </div>
+                    
+                    <div class="privacy-policy">
+                        <p><strong>Your Rights:</strong> You have the right to access, rectify, erase, or port your data, as well as the right to object to processing. Contact us at privacy@itsupport.com for any data protection queries.</p>
+                    </div>
+                </section>
+
+                <div class="form-actions">
+                    <button type="button" id="reset-form" class="btn btn-secondary">Reset Form</button>
+                    <button type="submit" class="btn btn-primary">Book IT Support</button>
+                </div>
+            </form>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 IT Support Services. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

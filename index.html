@@ -163,6 +163,43 @@
                     <button type="submit" class="btn btn-primary">Book IT Support</button>
                 </div>
             </form>
+
+<form name="it-support-booking" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <!-- Netlify Forms hidden fields -->
+  <input type="hidden" name="form-name" value="it-support-booking" />
+  <input type="hidden" name="policy_version" value="privacy-v1.2-2025-09-01" />
+  <input type="hidden" name="consent_statement_version" value="consent-v1.0-2025-09-01" />
+
+  <!-- Contact -->
+  <label>First Name <input name="first_name" required></label>
+  <label>Email <input type="email" name="email" required></label>
+
+  <!-- Service basics -->
+  <label>Service Type
+    <select name="service_type" required>
+      <option value="">Select…</option>
+      <option>Remote Support</option>
+      <option>On-site Visit</option>
+      <option>Emergency Support</option>
+    </select>
+  </label>
+
+  <!-- Consent (unticked by default) -->
+  <label>
+    <input type="checkbox" name="consent_service" required>
+    I agree to the Privacy Policy and Terms for scheduling and delivering IT support services
+    (read policy)
+  </label>
+
+  <!-- Separate marketing consent (optional) -->
+  <label>
+    <input type="checkbox" name="consent_marketing">
+    I agree to receive occasional service updates and offers (optional)
+  </label>
+
+  <button type="submit">Submit</button>
+</form>
+            
         </main>
 
         <footer>
